@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react'
 const TrafficLightSimulator = () => {
     const [currentLight, setCurrentLight] = useState("red")
     const lights = ['red', 'yellow', 'green'];
-    
+
     useEffect(() => {
-        setTimeout(() => {
+        const interval= setInterval(() => {
             setCurrentLight(prev => {
                 const currentIndex = lights.indexOf(prev);
                 const nextIndex = (currentIndex + 1) % lights.length;
                 return lights[nextIndex];
             });
         }, 3000);
-    }, [currentLight])
+
+        return()=>clearInterval(interval);
+    })
 
     return (
         <div className='h-screen flex justify-center items-center flex-col gap-2'>
