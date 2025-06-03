@@ -4,7 +4,5 @@ import './index.css'
 import TrafficLightSimulator from './TrafficLightSimulator'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <TrafficLightSimulator />
-  </StrictMode>,
 )
