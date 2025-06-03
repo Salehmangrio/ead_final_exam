@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const TrafficLightSimulator = () => {
+    const [currentLight, setCurrentLight] = useState("red")
 
     return (
         <div className='h-screen flex justify-center items-center flex-col gap-2'>
